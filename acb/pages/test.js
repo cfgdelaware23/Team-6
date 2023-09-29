@@ -5,3 +5,12 @@ export default function TestPage () {
         <Test />
     )
 }
+
+
+export default function TextBoxPage() {
+    return (
+        <TextBox />
+    )
+}   
+
+
