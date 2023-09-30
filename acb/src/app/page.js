@@ -94,7 +94,7 @@ export default function App() {
         {/* <VolunteerForm></VolunteerForm> */}
 
         {selectedRole === "Event Coordinator" ? <Events title="What's New!" table={test} /> : <></>}
-        {selectedRole === "Event Coordinator" ? <Link href="/eventOrganizer"><button style={{ backgroundColor: '#36287C', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer' }}>Add New Event</button></Link> : <></>}
+        {selectedRole === "Event Coordinator" ? <Link href="/eventOrganizer"><button style={{ backgroundColor: '#36287C', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer' ,  padding: '12px 24px'}}>Add New Event</button></Link> : <></>}
         {/* {selectedRole === "Event Coordinator" ? <EventForm></EventForm> : <></>} */}
 
         {selectedRole === "Volunteer" ? <Events title="Upcoming Events" table={test2} /> : <></>}
