@@ -33,7 +33,7 @@ const Admin = () => {
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Email</th>
-                            <th>Gender</th>
+                            <th>Date</th>
                         </tr>
                     </thead> 
                     <tbody>
@@ -44,7 +44,7 @@ const Admin = () => {
                                     <td>{parsedData.first_name}</td>
                                     <td>{parsedData.last_name}</td>
                                     <td>{parsedData.email}</td>
-                                    <td>{parsedData.gender}</td>
+                                    <td>{parsedData.date}</td>
                                 </tr>
                             ))}
                     </tbody>
