@@ -1,10 +1,12 @@
+// why did we comment out stuff? also this should be in .gitignore 
+
 // import { createConnection } from 'mysql';
 
 // const conn = createConnection({
-//     host: "database6.cs0tgohxdki8.us-east-2.rds.amazonaws.com",
-//     user: "admin",
-//     password: "",
-//     database: "database6"
+//     host: process.env.HOST,
+//     user: process.env.USER,
+//     password: process.env.PASSWORD,
+//     database: process.env.DATABASE,
 // });
 
 // export function fetchAvailabilities() {
