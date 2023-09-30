@@ -7,7 +7,8 @@ const EventForm = () => {
     const [last_name, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [events, setCompany] = useState('');
-    const [date, setDate] = useState(new Date);
+    const [description, setDescription] = useState('');
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -72,6 +73,17 @@ const EventForm = () => {
             </div>
 
             <div style={{ marginBottom: '20px' }}>
+              <label htmlFor="description">Description: </label>
+              <input
+                type="des"
+                id="des"
+                name="des"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+            </div>
+
+            <div style={{ marginBottom: '20px' }}>
             <label htmlFor="date">What date is your event </label>
             <input type="date" id="date" name="event_date"/> 
 
@@ -88,7 +100,8 @@ const EventForm = () => {
                   fontSize: '16px',
                   borderRadius: '4px',
                   border: 'none',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  onclick: { set_new_user }
                 }}
               >
                 Submit
