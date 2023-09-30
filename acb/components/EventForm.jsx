@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { DatePicker } from "@chakra-ui/react";
 
-
 export var firstName;
 export var lastName;
 export var emailAddress;
