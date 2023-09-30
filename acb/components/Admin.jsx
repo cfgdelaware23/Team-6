@@ -42,7 +42,7 @@ const Admin = () => {
 
     const csvData = [
     ["ID", "First Name", "Last Name", "Email", "Gender", "IP Address"],
-    ...data.map(( { id, first_name, last_name, email, gender, ip_address}) => [
+    ...data.map(( { id, first_name, last_name, email, gender, ip_address }) => [
             id,
             first_name,
             last_name,
