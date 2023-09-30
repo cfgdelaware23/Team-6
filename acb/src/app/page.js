@@ -1,6 +1,7 @@
 "use client"
 import Image from "/public/logo.jpeg"
 import styles from './page.module.css'
+
 import { useState } from "react";
 import { Users } from './Users';
 import { Volunteer } from './Volunteer';
@@ -9,8 +10,6 @@ import { EventCoordinator } from './EventCoordinator';
 
 import { Heading, Radio, RadioGroup, Stack, HStack, Img} from "@chakra-ui/react";
 import { ViewIcon } from "@chakra-ui/icons";
-
-
 
 
 export default function App() {
