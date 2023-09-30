@@ -1,3 +1,5 @@
+const { insertData } = require('./dataImporter');
+
 require('dotenv').config();
 
 const express = require('express');
@@ -7,6 +9,7 @@ const mysql = require('mysql');
 
 const app = express();
 app.use(cors)
+// app.use(cors());
 const port = 5000;
 
 app.use(bodyParser.json());
@@ -25,19 +28,6 @@ con.connect((err) => {
     return;
   }
   console.log('Connected to the database');
-});
-
-
-// try server side GET endpoint
-app.get('/', (req, res) => {
-  const sql = 'SELECT * FROM availabilities';
-  db.query(sql, (err, result) => {
-    if (err) {
-      throw err('Error inserting data into the database', err);
-    }
-    console.log('Fetched users:', result);
-    res.json(result);
-  });
 });
 
 // export function fetchAvailabilities() {
@@ -67,9 +57,33 @@ app.post('/', (req, res) => {
       console.error('Error inserting data into the database', err);
       res.status(500).json({ error: 'Internal Server Error' });
     } else {
+      insertData(formData);
       console.log('Form data inserted successfully');
       res.json({ message: 'Form data inserted successfully' });
     }
+  });
+});
+
+// try server side GET endpoint
+app.get('/', (req, res) => {
+  const sql = 'SELECT * FROM availabilities';
+  db.query(sql, (err, result) => {
+    if (err) {
+      throw err('Error inserting data into database', err);
+    }
+    console.log('Fetched users:', result);
+    res.json(result);
+  });
+});
+
+app.get('/', (req, res) => {
+  const sql = 'SELECT * FROM vTable';
+  db.query(sql, (err, result) => {
+    if (err) {
+      throw err('Error retrieving data from SQL table');
+    }
+    console.log('Fetched users:', result);
+    res.json(result);
   });
 });
 
