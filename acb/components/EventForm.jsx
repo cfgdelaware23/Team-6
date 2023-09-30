@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { DatePicker } from "@chakra-ui/react";
+import { HStack, Img, Heading } from "@chakra-ui/react";
 
 export var firstName;
 export var lastName;
@@ -38,6 +38,14 @@ const EventForm = () => {
 
 
     return (
+      <div>
+              <HStack p={6} bg="#362B7C"justify="space-between">
+                <HStack>
+                  <Img src="./logo.jpeg" alt="ACB Logo" height="100px"/>
+                 <Heading size="xl" pl={2} color="#FFFFFF">American Council of the Blind </Heading>
+               </HStack>
+               </HStack>
+
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
           <form onSubmit={handleSubmit} style={{ width: '300px', textAlign: 'center', fontFamily: 'sans-serif' }}>
             <h1>Event Coordinator Form</h1>
@@ -114,13 +122,14 @@ const EventForm = () => {
                   borderRadius: '4px',
                   border: 'none',
                   cursor: 'pointer',
-                  // onclick: { set_new_user }
+                  onSubmit: "You have successfully created a new event!"
                 }}
               >
                 Submit
               </button>
             </div>
           </form>
+        </div>
         </div>
       );
     };
