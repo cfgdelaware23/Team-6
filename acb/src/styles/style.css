@@ -1,0 +1,54 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.download-btn{
+    width: 100%;
+    height: 100%;
+    background: #362B7C;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.download-btn:hover{
+    cursor: pointer;
+}
+
+.csv-download{
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-container{
+    position: absolute;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: 1rem;
+    padding-right: 10rem;
+    font-family: arial, sans-serif;
+}
+
+table{
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border: 2px black;
+    font-family: arial, sans-serif;
+    margin-left: 10rem;
+}
+    
+th{
+    background-color: #362B7C;
+    color: #fff;
+    text-align: left;
+}
+
+td{
+    background-color: #dcdae6;
+}
+
+th, td{
+    padding: 1rem;
+}
