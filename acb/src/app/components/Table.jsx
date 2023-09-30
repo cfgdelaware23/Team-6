@@ -7,8 +7,7 @@ import mock_data from './MOCK_DATA.json';
 
 import '../styles/style.css';
 
-
-const DownloadButton = () => {
+const Table = () => {
 
   const data = React.useMemo(() => mock_data, []);
   const columns = React.useMemo(
@@ -49,7 +48,7 @@ const DownloadButton = () => {
       last_name,
       email,
       gender,
-      ip_address
+      ip_address,
     ])
   ]
 
@@ -57,9 +56,8 @@ const DownloadButton = () => {
     useTable({ columns, data });
 
   return (
-    <>
-    <div className="app">
-      <div className="container">
+    <div className="container">
+      <div className="tb">
         <table {...getTableProps()}>
           <thead className="header-table">
             {headerGroups.map((headerGroup) => (
@@ -86,13 +84,13 @@ const DownloadButton = () => {
           </tbody>
         </table>
       </div>
+      <div className="btn-container">
+        <Button className="download-btn">
+          <CSVLink className="csv-download" filename="volunteer_data" data={csvData}>Download me</CSVLink>
+        </Button>
+      </div>
     </div>
-
-    <Button>
-      <CSVLink className="csv_download" filename="volunteer_data" data={csvData}>Download me</CSVLink>
-    </Button>
-    </>
   );
 }
 
-export default DownloadButton;
+export default Table;

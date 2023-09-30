@@ -1,11 +1,33 @@
-.csv_download{
-    text-decoration: none;
-}
-
-.app{
+.container{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.download-btn{
+    width: 100%;
+    height: 100%;
+    background: #362B7C;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.download-btn:hover{
+    cursor: pointer;
+}
+
+.csv-download{
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-container{
+    position: absolute;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: 1rem;
+    padding-right: 3.5rem;
 }
 
 table{
@@ -13,20 +35,21 @@ table{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border: 2px black;
     font-family: arial, sans-serif;
+    margin-left: 6rem;
+    width: 100%;
+    height: 100%;
 }
-
+    
 th{
     background-color: #362B7C;
-    font-size: 1rem;
     color: #fff;
     text-align: left;
 }
 
 td{
     background-color: #dcdae6;
-    font-size: 0.9rem;
 }
 
 th, td{
-    padding: 0.5rem;
+    padding: 1rem;
 }

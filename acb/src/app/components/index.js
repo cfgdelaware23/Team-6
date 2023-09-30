@@ -1,6 +1,6 @@
-import DownloadButton from './DownloadButton';
+import Table from './Table';
 
 export {
-    DownloadButton
+    Table
 }
 
