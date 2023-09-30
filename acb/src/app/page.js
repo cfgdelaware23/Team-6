@@ -7,8 +7,8 @@ import { Users } from './Users';
 import { Admin } from './Admin';
 import VolunteerForm  from "../../components/VolunteerForm";
 import { EventCoordinator } from './EventCoordinator';
-
 import { Heading, Radio, RadioGroup, Stack, HStack, Img, Flex, Box} from "@chakra-ui/react";
+import { Heading, Radio, RadioGroup, Stack, HStack, Img } from "@chakra-ui/react";
 import { ViewIcon } from "@chakra-ui/icons";
 
 
