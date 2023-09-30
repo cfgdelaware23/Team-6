@@ -1,10 +1,7 @@
-// test
-import { VolunteerForm } from "../components/VolunteerForm";
+import VolunteerForm from "../components/VolunteerForm"
 
-const volunteerForm = () => {
+export default function Form () {
     return (
         <VolunteerForm />
     )
 }
-
-export default volunteerForm;

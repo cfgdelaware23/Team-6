@@ -1,14 +1,14 @@
 "use client"
 import Image from "/public/logo.jpeg"
 import styles from './page.module.css'
-import Events from "../../components/Events";
+import { Events } from "../../components";
 import Link from "next/link";
 
 import { useState } from "react";
 import { Users } from './Users';
-import { Admin } from './Admin';
-import VolunteerForm from "../../components/VolunteerForm";
-import EventOrganizerForm from "../../components/EventOrganizerForm";
+import { Admin } from "../../components";
+import { VolunteerForm } from "../../components";
+import { eventOrganizerForm } from "../../components";
 import EventForm from "../../components/EventForm";
 
 import { Heading, Radio, RadioGroup, Stack, HStack, Img } from "@chakra-ui/react";
@@ -94,15 +94,16 @@ export default function App() {
         {/* <VolunteerForm></VolunteerForm> */}
 
         {selectedRole === "Event Coordinator" ? <Events title="What's New!" table={test} /> : <></>}
-        {selectedRole === "Event Coordinator" ? <Link href="/eventOrganizer"><button style={{ backgroundColor: '#36287C', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer' ,  padding: '12px 24px'}}>Add New Event</button></Link> : <></>}
+        {selectedRole === "Event Coordinator" ? <Link href="/eventOrganizer"><button style={{ backgroundColor: '#36287C', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' ,  padding: '12px 24px'}}>Add New Event</button></Link> : <></>}
         {/* {selectedRole === "Event Coordinator" ? <EventForm></EventForm> : <></>} */}
 
         {selectedRole === "Volunteer" ? <Events title="Upcoming Events" table={test2} /> : <></>}
-        {selectedRole === "Volunteer" ? <Link href="/volunteer_form"><button style={{ backgroundColor: '#36287C', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer' }}>Add New Hours</button></Link> : <></>}
+        {selectedRole === "Volunteer" ? <Link href="/volunteer_form"><button style={{ backgroundColor: '#36287C', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' ,  padding: '12px 24px' }}>Add New Hours</button></Link> : <></>}
         {/* {event_coordinator()}
                         {admin()} */}
-
-        {selectedRole==="Admin"?<Admin title="Admin"/> : <></>}
+        {selectedRole === "Admin" ? <Admin /> : <></>}
+        
+                      
       </div>
       <div>
       </div>
@@ -110,5 +111,4 @@ export default function App() {
 
   );
 }
-
 

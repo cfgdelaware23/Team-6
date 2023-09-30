@@ -1,14 +1,15 @@
 import Admin from "./Admin";
-import EventOrganizerForm from "./EventOrganizerForm";
-import VolunteerForm from "./VolunteerForm";
 import EventForm from "./EventForm";
+import eventOrganizerForm from "./eventOrganizerForm";
 import Events from "./Events";
+import Form from "./Form";
+import VolunteerForm from "./VolunteerForm";
 
-export {
+export { 
     Admin,
-    EventOrganizerForm,
-    VolunteerForm,
     EventForm,
-    Events
+    eventOrganizerForm,
+    Events,
+    Form,
+    VolunteerForm
 }
-

@@ -2,6 +2,7 @@
 "use client"
 import React, {useState} from 'react';
 
+
 const eventOrganizerForm = () => {
   const [lastName, setLastName] = useState('')
   const [firstName, setFirstName] = useState('')
@@ -42,6 +43,7 @@ const eventOrganizerForm = () => {
             required
           />
         </div>
+        
         <div style={{margin: '10px'}}>
           <label htmlFor="email">Email:</label>
           <input
@@ -53,6 +55,8 @@ const eventOrganizerForm = () => {
             required
           />
         </div>
+
+
         <div style={{margin: '10px'}}>
           <label htmlFor="text">Company:</label>
           <input
@@ -63,6 +67,7 @@ const eventOrganizerForm = () => {
             onChange={(e) => setCompany(e.target.value)}
           />
         </div>
+
         <div style={{margin: '10px'}}>
           <label htmlFor="date">Date:</label>
           <input
@@ -73,6 +78,7 @@ const eventOrganizerForm = () => {
             onChange={(e) => setDate(e.target.value)}
           />
         </div>
+
         <div style={{margin: '10px'}}>
           <label htmlFor="text">Recurrence:</label>
           <input
@@ -83,6 +89,8 @@ const eventOrganizerForm = () => {
             onChange={(e) => setRecurrence(e.target.value)}
           />
         </div>
+
+
         <div>
           <button type="submit">Submit</button>
         </div>

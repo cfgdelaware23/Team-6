@@ -66,7 +66,7 @@ const VolunteerForm = () => {
               />
             </div>
             <div style={{ marginBottom: '20px' }}>
-              <label htmlFor="events"> Choose your event (Select all that apply): </label>
+              <label htmlFor="events">Choose your event (Select all that apply): </label>
               <Select
                 defaultValue={[eventOptions[1], eventOptions[2]]}
                 isMulti

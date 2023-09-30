@@ -2,6 +2,12 @@
 import React, { useState } from 'react';
 import { DatePicker } from "@chakra-ui/react";
 
+export var firstName;
+export var lastName;
+export var emailAddress;
+export var company;
+export var dateData;
+
 const EventForm = () => {
     const [first_name, setFirstName] = useState('');
     const [last_name, setLastName] = useState('');
@@ -12,10 +18,17 @@ const EventForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // logic
-        console.log(first_name);
-        console.log(last_name);
-        console.log(email);
-        console.log(events);
+        firstName = first_name;
+        lastName = last_name;
+        emailAddress = email;
+        company = events;  
+        dateData = date;
+                
+        console.log(firstName);
+        console.log(lastName);
+        console.log(emailAddress);
+        console.log(company);
+        console.log(dateData);
         console.log('Form submitted');
     };
 
@@ -66,14 +79,23 @@ const EventForm = () => {
                 type="company"
                 id="company"
                 name="company"
-                value={email}
+                value={events}
                 onChange={(e) => setCompany(e.target.value)}
               />
             </div>
 
             <div style={{ marginBottom: '20px' }}>
-            <label htmlFor="date">What date is your event </label>
-            <input type="date" id="date" name="event_date"/> 
+
+            <div style={{ marginBottom: '20px' }}>
+              <label htmlFor="date">What date is your event: </label>
+              <input
+                type="date"
+                id="date"
+                name="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+            </div>
 
     </div>
 
@@ -100,3 +122,4 @@ const EventForm = () => {
     };
     
     export default EventForm;
+    
