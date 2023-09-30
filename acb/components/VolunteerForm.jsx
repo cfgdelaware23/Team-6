@@ -29,7 +29,7 @@ const VolunteerForm = () => {
                  <Heading size="xl" pl={2} color="#FFFFFF">American Council of the Blind </Heading>
                </HStack>
                </HStack>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', minHeight: '100vh' }}>
           <form onSubmit={handleSubmit} style={{ width: '300px', textAlign: 'center', fontFamily: 'sans-serif' }}>
             <h1>Volunteer Form</h1>
             <div style={{ marginBottom: '20px' }}>
