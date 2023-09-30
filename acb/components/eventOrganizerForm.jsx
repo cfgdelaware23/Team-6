@@ -11,25 +11,23 @@ const eventOrganizerForm = () => {
   const [date, setDate] = useState('')
   const [recurrence, setRecurrence] = useState('')
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // logic
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        name="first_name"
+        name="firstName"
         placeholder="First Name"
-        value={formData.first_name}
+        value={firstName}
       // onChange={handleInputChange}
       />
       {/* optional - form fields */}
       <button type="submit">Submit</button>
     </form>
-    {
-      isSubmitted && (
-        <p>Thank you, {formData.firstName}!</p>
-      )
-    }
+    setIsSubmitted(true);
 
     console.log('Form submitted');
   };
@@ -109,6 +107,13 @@ const eventOrganizerForm = () => {
           <button type="submit">Submit</button>
         </div>
       </form>
+
+      {
+        isSubmitted && (
+          <p>Thank you, {formData.firstName}!</p>
+        )
+      }
+
     </div>
   );
 };

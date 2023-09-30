@@ -30,8 +30,6 @@ export default function App() {
   ["Sunday Edition", "This Sunday Anthony and the Sunday Edition Crew welcomes Everette Bacon the new Vice President of Blindness Initiatives, AIRA. Everette who is a prominent Board member of the National Federation of the Blind and passionate Advocator will share his journey with us and give us a look into the realm of advocating for Visual Interpretation."],
   ["Ask the Pastor", "Ask Pastor Bill your questions about the Bible or the Christian life. A teaching will be followed by your questions. Prayer requests can then be shared if desired. This event is open to anyone regardless of their denomination."]]
 
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
   // const [formData, setFormData] = useState({
   //   first_name: '',
   //   last_name: '',
@@ -39,12 +37,6 @@ export default function App() {
   //   company: '',
   //   date: '',
   // });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // add form logic here - send data to the server
-    setIsSubmitted(true);
-  };
 
   // fetchAvailabilities();
 
