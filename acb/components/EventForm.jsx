@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
-import { DatePicker } from "@chakra-ui/react";
+import { HStack, Img, Heading } from "@chakra-ui/react";
+
 
 export var firstName;
 export var lastName;
@@ -13,8 +14,7 @@ const EventForm = () => {
     const [last_name, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [events, setCompany] = useState('');
-    const [description, setDescription] = useState('');
-
+    const [date, setDate] = useState(new Date);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -31,14 +31,47 @@ const EventForm = () => {
         console.log(company);
         console.log(dateData);
         console.log('Form submitted');
+
+        // construct body of data we want to send
+        const body = {
+            firstName,
+            lastName,
+            emailAddress,
+            company,
+            dateData
+        }
+
+        fetch('http://localhost:5000/', { // not completing request
+          method: 'POST',
+          body: JSON.stringify(body),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log('Form submitted successfully', data);
+            // Reset after submit, form is cleared
+            setFirstName(''); 
+            setLastName('');
+            setEmail('');
+            setCompany('');
+            setDate('');
+          }).catch((error) => {
+            console.error('Error submitting form', error);
+          });
     };
 
-
-
-
-
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+      <div>
+              <HStack p={6} bg="#362B7C"justify="space-between">
+                <HStack>
+                  <Img src="./logo.jpeg" alt="ACB Logo" height="100px"/>
+                 <Heading size="xl" pl={2} color="#FFFFFF">American Council of the Blind </Heading>
+               </HStack>
+               </HStack>
+
+        <div style={{ display: 'flex', justifyContent: 'center',  minHeight: '100vh' }}>
           <form onSubmit={handleSubmit} style={{ width: '300px', textAlign: 'center', fontFamily: 'sans-serif' }}>
             <h1>Event Coordinator Form</h1>
             <div style={{ marginBottom: '20px' }}>
@@ -86,19 +119,17 @@ const EventForm = () => {
             </div>
 
             <div style={{ marginBottom: '20px' }}>
-              <label htmlFor="description">Description: </label>
-              <input
-                type="des"
-                id="des"
-                name="des"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-              />
-            </div>
 
             <div style={{ marginBottom: '20px' }}>
-            <label htmlFor="date">What date is your event </label>
-            <input type="date" id="date" name="event_date"/> 
+              <label htmlFor="date">What date is your event: </label>
+              <input
+                type="date"
+                id="date"
+                name="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+            </div>
 
     </div>
 
@@ -114,13 +145,14 @@ const EventForm = () => {
                   borderRadius: '4px',
                   border: 'none',
                   cursor: 'pointer',
-                  // onclick: { set_new_user }
+                  onSubmit: "You have successfully created a new event!"
                 }}
               >
                 Submit
               </button>
             </div>
           </form>
+        </div>
         </div>
       );
     };

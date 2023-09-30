@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { Select } from "@chakra-ui/react";
+import { Select, HStack, Img, Heading } from "@chakra-ui/react";
 
 const VolunteerForm = () => {
     const [first_name, setFirstName] = useState('');
@@ -18,18 +18,18 @@ const VolunteerForm = () => {
         console.log('Form submitted');
     };
 
-    const eventOptions = [
-        { value: '1', label: 'ACB Presents the Daily Schedule' },
-        { value: '2', label: 'The Breakfast Bunch' },
-        { value: '3', label: 'Sunday Edition' },
-        { value: '4', label: 'Ask the Pastor' },
-        { value: '5', label: 'Quilting Guild' },
-        { value: '6', label: 'Reading the 18th Century' },
-        { value: '7', label: 'ST. Lucy\'s Guidey' },
-    ]
+    const EVENTS = ["Bingo Night", "Weekly Book Club", "Annual Friendsgiving Celebration", "Just a Chill Gathering", "Let's Talk About Life"]
+
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+      <div> 
+      <HStack p={6} bg="#362B7C"justify="space-between">
+                <HStack>
+                  <Img src="./logo.jpeg" alt="ACB Logo" height="100px"/>
+                 <Heading size="xl" pl={2} color="#FFFFFF">American Council of the Blind </Heading>
+               </HStack>
+               </HStack>
+        <div style={{ display: 'flex', justifyContent: 'center', minHeight: '100vh' }}>
           <form onSubmit={handleSubmit} style={{ width: '300px', textAlign: 'center', fontFamily: 'sans-serif' }}>
             <h1>Volunteer Form</h1>
             <div style={{ marginBottom: '20px' }}>
@@ -67,14 +67,15 @@ const VolunteerForm = () => {
             </div>
             <div style={{ marginBottom: '20px' }}>
               <label htmlFor="events">Choose your event (Select all that apply): </label>
-              <Select
-                defaultValue={[eventOptions[1], eventOptions[2]]}
-                isMulti
-                name="events"
-                options={eventOptions}
-                className="basic-multi-select"
-                classNamePrefix="select"
-              />
+              <Select placeholder='Select option'>
+                <option value='option1'>Bingo Night </option>
+                <option value='option2'>Weekly Book Club</option>
+                <option value='option3'>Annual Friendsgiving Celebration</option>
+                <option value='option4'>Just A Chill Gathering</option>
+                <option value='option5'>Let's Talk About Life</option>
+
+
+                </Select>
             </div>
             <div>
               <button
@@ -86,13 +87,15 @@ const VolunteerForm = () => {
                   fontSize: '16px',
                   borderRadius: '4px',
                   border: 'none',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  onSubmit: "You have successfully logged your availability. "
                 }}
               >
                 Submit
               </button>
             </div>
           </form>
+        </div>
         </div>
       );
     };
