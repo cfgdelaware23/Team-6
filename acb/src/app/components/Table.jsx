@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { CSVLink, CSVDownload } from "react-csv";
+import { CSVLink } from "react-csv";
 import { useTable } from 'react-table';
 
 import mock_data from './MOCK_DATA.json';
@@ -86,7 +86,7 @@ const Table = () => {
       </div>
       <div className="btn-container">
         <Button className="download-btn">
-          <CSVLink className="csv-download" filename="volunteer_data" data={csvData}>Download me</CSVLink>
+          <CSVLink className="csv-download" filename="volunteer_data" data={csvData}>Download Me</CSVLink>
         </Button>
       </div>
     </div>
