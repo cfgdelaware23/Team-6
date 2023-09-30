@@ -91,7 +91,7 @@ export default function App() {
                         
                         {selectedRole==="Event Coordinator"?<Events title="What's New!" table={test}/> : <></>}
                         {selectedRole==="Event Coordinator"?<EventForm></EventForm> : <></>}  
-               
+        
                         {selectedRole==="Volunteer"?<Events title="Upcoming Events" table={test2}/> : <></>} 
                         {selectedRole==="Volunteer"?<VolunteerForm></VolunteerForm> : <></>}
                         {/* {event_coordinator()} */}

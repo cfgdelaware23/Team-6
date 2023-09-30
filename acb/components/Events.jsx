@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card, CardHeader, CardBody, CardFooter, Text } from '@chakra-ui/react';
+import React from 'react'
+import { Card, CardHeader, CardBody, CardFooter, Text } from '@chakra-ui/react'
 
 function CreateCard(data){
     data.map((x) => (
@@ -15,7 +15,7 @@ function CreateCard(data){
 function Events(props) {
     const table = props.table;
 
-    return (
+  return (
     <div className='events'>
         <div className='events-block'>
         
@@ -38,7 +38,7 @@ function Events(props) {
         
         </div>
     </div>
-    )
+  )
 }
 
-export default Events;
+export default Events
