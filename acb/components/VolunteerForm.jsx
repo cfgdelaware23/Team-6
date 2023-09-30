@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { Select } from "@chakra-ui/react";
+import { Select, HStack, Img, Heading } from "@chakra-ui/react";
 
 const VolunteerForm = () => {
     const [first_name, setFirstName] = useState('');
@@ -22,6 +22,13 @@ const VolunteerForm = () => {
 
 
     return (
+      <div> 
+      <HStack p={6} bg="#362B7C"justify="space-between">
+                <HStack>
+                  <Img src="./logo.jpeg" alt="ACB Logo" height="100px"/>
+                 <Heading size="xl" pl={2} color="#FFFFFF">American Council of the Blind </Heading>
+               </HStack>
+               </HStack>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
           <form onSubmit={handleSubmit} style={{ width: '300px', textAlign: 'center', fontFamily: 'sans-serif' }}>
             <h1>Volunteer Form</h1>
@@ -80,13 +87,15 @@ const VolunteerForm = () => {
                   fontSize: '16px',
                   borderRadius: '4px',
                   border: 'none',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  onSubmit: "You have successfully logged your availability. "
                 }}
               >
                 Submit
               </button>
             </div>
           </form>
+        </div>
         </div>
       );
     };
