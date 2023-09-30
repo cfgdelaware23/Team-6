@@ -3,7 +3,7 @@ import eventOrganizerForm from "../components/eventOrganizerForm";
 
 const eventOrganizerForm = () => {
     return (
-        <eventOrganizerForm/>
+        <eventOrganizerForm />
     )
 }
 

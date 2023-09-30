@@ -32,13 +32,13 @@ export default function App() {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const [formData, setFormData] = useState({
-    first_name: '',
-    last_name: '',
-    email_address: '',
-    company: '',
-    date: '',
-  });
+  // const [formData, setFormData] = useState({
+  //   first_name: '',
+  //   last_name: '',
+  //   email_address: '',
+  //   company: '',
+  //   date: '',
+  // });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -112,22 +112,6 @@ export default function App() {
         </Stack>
       </HStack>
       <br />
-
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="first_name"
-          placeholder="First Name"
-          value={formData.first_name}
-        // onChange={handleInputChange}
-        />
-        {/* optional - form fields */}
-        <button type="submit">Submit</button>
-      </form>
-      {isSubmitted && (
-        <p>Thank you, {formData.firstName}!</p>
-      )}
-
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
 

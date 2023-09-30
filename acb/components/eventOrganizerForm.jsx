@@ -1,6 +1,6 @@
 // import Form from "../components/Form"
 "use client"
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 
 const eventOrganizerForm = () => {
@@ -14,6 +14,23 @@ const eventOrganizerForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // logic
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        name="first_name"
+        placeholder="First Name"
+        value={formData.first_name}
+      // onChange={handleInputChange}
+      />
+      {/* optional - form fields */}
+      <button type="submit">Submit</button>
+    </form>
+    {
+      isSubmitted && (
+        <p>Thank you, {formData.firstName}!</p>
+      )
+    }
+
     console.log('Form submitted');
   };
 
@@ -21,7 +38,7 @@ const eventOrganizerForm = () => {
     <div>
       <h1>Event Organizer Form</h1>
       <form onSubmit={handleSubmit}>
-        <div style={{margin: '10px'}}>
+        <div style={{ margin: '10px' }}>
           <label htmlFor="lastName">lastName:</label>
           <input
             type="text"
@@ -32,7 +49,7 @@ const eventOrganizerForm = () => {
             required
           />
         </div>
-        <div style={{margin: '10px'}}>
+        <div style={{ margin: '10px' }}>
           <label htmlFor="firstName">firstName:</label>
           <input
             type="text"
@@ -43,8 +60,8 @@ const eventOrganizerForm = () => {
             required
           />
         </div>
-        
-        <div style={{margin: '10px'}}>
+
+        <div style={{ margin: '10px' }}>
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -56,8 +73,7 @@ const eventOrganizerForm = () => {
           />
         </div>
 
-
-        <div style={{margin: '10px'}}>
+        <div style={{ margin: '10px' }}>
           <label htmlFor="text">Company:</label>
           <input
             type="text"
@@ -68,7 +84,7 @@ const eventOrganizerForm = () => {
           />
         </div>
 
-        <div style={{margin: '10px'}}>
+        <div style={{ margin: '10px' }}>
           <label htmlFor="date">Date:</label>
           <input
             type="date"
@@ -79,7 +95,7 @@ const eventOrganizerForm = () => {
           />
         </div>
 
-        <div style={{margin: '10px'}}>
+        <div style={{ margin: '10px' }}>
           <label htmlFor="text">Recurrence:</label>
           <input
             type="text"
@@ -89,8 +105,6 @@ const eventOrganizerForm = () => {
             onChange={(e) => setRecurrence(e.target.value)}
           />
         </div>
-
-
         <div>
           <button type="submit">Submit</button>
         </div>

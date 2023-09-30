@@ -11,7 +11,6 @@ const Form = () => {
     console.log('Form submitted');
   };
 
-
   return (
     <div>
       <h1>Form</h1>
