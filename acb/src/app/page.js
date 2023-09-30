@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Users } from './Users';
 import { Admin } from './Admin';
 import VolunteerForm  from "../../components/VolunteerForm";
+import EventOrganizerForm from "../../components/EventOrganizerForm";
 import EventForm  from "../../components/EventForm";
 
 import { Heading, Radio, RadioGroup, Stack, HStack, Img} from "@chakra-ui/react";
@@ -41,6 +42,14 @@ export default function App() {
     //   }
     //   }
 
+      function event_coordinator(){
+        if (selectedRole == "EventCoordinator"){
+          return (<eventOrganizerForm></eventOrganizerForm>);
+        }
+        else{
+          return (<></>)
+        }
+        }
 
         function admin(){
           if (selectedRole == "Admin"){
@@ -76,14 +85,18 @@ export default function App() {
                     </RadioGroup>
                 </Stack>
             </HStack>
-            
-            {/* <Events title="Upcoming Events" table={test2}/> */}
-                    <div>         
+            <br/>
+                    <div>
+                        {/* <VolunteerForm></VolunteerForm> */}
+                        
                         {selectedRole==="Event Coordinator"?<Events title="What's New!" table={test}/> : <></>}
-                        {selectedRole==="Event Coordinator"?<EventForm></EventForm> : <></>}  
+                        {selectedRole==="Event Coordinator"?<EventOrganizerForm></EventOrganizerForm> : <></>}  
                
                         {selectedRole==="Volunteer"?<Events title="Upcoming Events" table={test2}/> : <></>} 
                         {selectedRole==="Volunteer"?<VolunteerForm></VolunteerForm> : <></>}
+
+                         {/* {selectedRole==="Volunteer"?<VolunteerForm></VolunteerForm> : <></>}
+                         {selectedRole==="EventCoordinator"?<EventOrganizerForm></EventOrganizerForm> : <></>}   */}
                         {/* {event_coordinator()}
                         {admin()} */}
                     </div>
