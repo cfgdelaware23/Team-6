@@ -15,11 +15,14 @@
     "@emotion/styled": "^11.11.0",
     "eslint": "8.50.0",
     "eslint-config-next": "13.5.3",
+    "framer-motion": "^10.16.4",
+    "mmh": "^0.0.0-alpha.0",
+    "mysql": "^2.18.1",
     "next": "^13.5.3",
+    "nmh": "^1.0.0",
+    "node": "^20.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-select": "^5.7.5"
-    "mysql": "^2.18.1",
-    "framer-motion": "^10.16.4",
   }
 }
