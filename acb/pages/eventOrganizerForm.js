@@ -1,4 +1,5 @@
-import { EventOrganizerForm } from "../components/EventOrganizerForm";
+// test
+import { EventOrganizerForm } from "../components";
 
 const eventOrganizerForm = () => {
     return (

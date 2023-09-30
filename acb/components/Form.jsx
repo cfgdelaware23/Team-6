@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 const Form = () => {
   const [name, setName] = useState('');
@@ -10,7 +10,6 @@ const Form = () => {
     // logic
     console.log('Form submitted');
   };
-
 
   return (
     <div>

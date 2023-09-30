@@ -1,4 +1,5 @@
-import { Admin } from "../components/Admin";
+// test
+import { Admin } from "../components";
 
 const admin = () => {
     return (
