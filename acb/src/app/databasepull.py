@@ -10,8 +10,7 @@ try:
 
     cursor = connection.cursor()
 
-    # Define your SQL query
-    sql_query = "SELECT * FROM your_table;"
+    sql_query = "SELECT * FROM vTable;"
 
     cursor.execute(sql_query)
 
