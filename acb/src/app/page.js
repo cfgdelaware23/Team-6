@@ -1,9 +1,9 @@
 "use client"
-import Image from 'next/image'
+import Image from "/public/logo.jpeg"
 import styles from './page.module.css'
 import { useState } from "react";
 import { Users } from './Users';
-import { Heading, Radio, RadioGroup, Stack, HStack} from "@chakra-ui/react";
+import { Heading, Radio, RadioGroup, Stack, HStack, Img} from "@chakra-ui/react";
 import { ViewIcon } from "@chakra-ui/icons";
 
 
@@ -22,14 +22,14 @@ export default function App() {
     }
   return (
     <div className = "App">
-      <HStack p={6} bg="blue.100" borderBottom="2px solid black" justify="space-between">
+      <HStack p={6} bg="blue.100"justify="space-between">
                 <HStack>
-                    {/* <img src="logo.png" width="50" alt="ACB Logo"/> */}
-                    <Heading size="xl" pl={2}>American Council of the Blind</Heading>
+                    <Img src="./logo.jpeg" alt="ACB Logo" height="100px"/>
+                    <Heading size="xl" pl={2} color="#FFFFFF">American Council of the Blind </Heading>
                 </HStack>
                 <Stack>
-                    <Heading as='h3' size="md"><ViewIcon/>&nbsp;&nbsp;Viewing as: {selectedRole}</Heading>
-                    <RadioGroup onChange={role => {
+                    <Heading as='h3' size="md" color="#FFFFFF"><ViewIcon/>&nbsp;&nbsp;Viewing as: {selectedRole}</Heading>
+                    <RadioGroup color="#FFFFFF" onChange={role => {
                         localStorage.setItem("role", role);
                         setRole(role);
                         if (!users.includes(role)){
