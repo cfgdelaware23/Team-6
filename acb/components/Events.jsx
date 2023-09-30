@@ -14,6 +14,7 @@ function CreateCard(data){
 
 function Events(props) {
     const table = props.table;
+    console.log(table)
 
   return (
     <div className='events'>
@@ -22,12 +23,11 @@ function Events(props) {
             <h1>{props.title}</h1>
             <div className='block-item'>
                     {table.map((x, index) => (
-                    
                         <Card key={index} className='individual-item'>
                             <CardBody>
                                 
-                                <Text className='item-title'>{x}</Text>
-                                <Text>This is an example description of the event</Text>
+                                <Text className='item-title'>{x[0]}</Text>
+                                <Text>{x[1]}</Text>
                                 
                             </CardBody>
                         </Card>
