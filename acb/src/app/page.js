@@ -20,7 +20,9 @@ export default function App() {
   const [selectedRole, setRole] = useState(localStorage.getItem("role") || "Volunteer");
   const [users, setUsers] = useState(["Volunteer", "Event Coordinator", "Admin"]);
 
-  const test = ["Sunday September 17, 2023", "Sunday September 17, 2023", "Sunday September 17, 2023"]
+  const test = [["Sunday September 17, 2023", "ACB Presents The Daily Schedule"], 
+                ["Tuesday September 19, 2023", "The Breakfast Bunch"], 
+                ["Wednesday September 20, 2023", "Spiritual Sanctuary"]]
   const test2 = [["ACB Presents The Daily Schedule", "Join your Community Morning Crew for the question of the day; reading of the daily schedule; and sharing time."], 
                   ["The Breakfast Bunch", "Join Tom and the gang for an hour of free-flowing conversation."], 
                   ["Spiritual Sanctuary", "Come one, come all to a place where we can relax and discuss all things spiritual with an open mind and acceptance. All faiths are welcome"], 
