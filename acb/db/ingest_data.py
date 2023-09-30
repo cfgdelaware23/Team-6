@@ -25,13 +25,16 @@ with open(hosting_file_path, newline='', encoding='utf-8-sig') as csvfile:
     header = next(test)
     # fields: 'Day', 'Time', 'Title', 'Account', 'Host', 'Moderator', 'Facilitator', 'Streamer', 'Broadcaster'
     print(header)
+    count = 0
     for row in test:
-        print(row)
-        cursor.execute('INSERT INTO vTable(Day1, \
+        a = cursor.execute('INSERT INTO vTable2(ID, Day1, \
             Time1, Titles, Account, Host, moderator, facilitator, Streamer, Broadcaster )' \
-            'VALUES("%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s")', 
-            [row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8]])
+            'VALUES("%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s")', 
+            [count, row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8]])
+        count += 1
+        print(a)
 
+conn.commit()
 
 cursor.close()
 
