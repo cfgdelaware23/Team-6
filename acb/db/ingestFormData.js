@@ -28,18 +28,42 @@ con.connect((err) => {
   console.log('Connected to the database');
 });
 
+
+// try server side GET endpoint
+app.get('/', (req, res) => {
+  const sql = 'SELECT * FROM availabilities';
+  db.query(sql, (err, result) => {
+    if (err) {
+      throw err('Error inserting data into the database', err);
+    }
+    console.log('Fetched users:', result);
+    res.json(result);
+  });
+});
+
+// export function fetchAvailabilities() {
+//     conn.connect(function (err) {
+//         if (err) throw err;
+//         console.log("Connected!");
+//         conn.query("SELECT * from availabilities", function (err, result) {
+//             if (err) throw err;
+//             console.log("Result: " + result);
+//         });
+//     });
+// }
+
 // doesn't make post request from client side, won't run 
 app.post('/', (req, res) => {
 
   const formData = req.body;
   var sql = "INSERT INTO availabilites (firstName, lastName, emailAddress, company, dateData) VALUES ('" + firstName + "', '" + lastName + "', '" + emailAddress + "', '" + company + "', '" + dateData + "')";
   con.query(sql, [
-        formData.firstName, 
-        formData.lastName, 
-        formData.email, 
-        formData.company, 
-        formData.dateData
-], (err, result) => {
+    formData.firstName,
+    formData.lastName,
+    formData.email,
+    formData.company,
+    formData.dateData
+  ], (err, result) => {
     if (err) {
       console.error('Error inserting data into the database', err);
       res.status(500).json({ error: 'Internal Server Error' });

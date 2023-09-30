@@ -1,3 +1,5 @@
+// why did we comment out stuff? also this should be in .gitignore 
+
 // import { createConnection } from 'mysql';
 
 // const conn = createConnection({
