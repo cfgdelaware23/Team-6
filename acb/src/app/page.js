@@ -8,9 +8,10 @@ import { useState } from "react";
 import { Users } from './Users';
 import { Admin } from './Admin';
 import VolunteerForm  from "../../components/VolunteerForm";
+import EventForm  from "../../components/EventForm";
+
+import { Heading, Radio, RadioGroup, Stack, HStack, Img} from "@chakra-ui/react";
 import { EventCoordinator } from './EventCoordinator';
-import { Heading, Radio, RadioGroup, Stack, HStack, Img, Flex, Box} from "@chakra-ui/react";
-// import { Heading, Radio, RadioGroup, Stack, HStack, Img } from "@chakra-ui/react";
 import { ViewIcon } from "@chakra-ui/icons";
 
 export default function App() {
@@ -20,31 +21,26 @@ export default function App() {
   const test = ["September 26th", "September 29th", "October 1st"]
   const test2 = ["Bingo Night", "Weekly Book Club", "Annual Friendsgiving Celebration", "Just a Chill Gathering", "Let's Talk About Life"]
 
-  function selectUser() {
-    if (selectedRole == "User") {
-      return (<Users></Users>);
-    } else {
-      return (<></>);
-    }
-  }
+  // function selectUser() {
+  //   if (selectedRole == "User") {
+  //     return (<Users></Users>);
+  //   } else {
+  //     return (<></>);
+  //   }
+  // }
 
     // function volunteer(){
     //   if (selectedRole == "Volunteer"){
-    //     return (<VolunteerForm></VolunteerForm>);
+    //     return (
+    //       <Events title="Upcoming Events" table={test2}/>,
+    //       <VolunteerForm></VolunteerForm>
+    //       );
     //   }
     //   else{
     //     return (<></>)
     //   }
     //   }
 
-      function event_coordinator(){
-        if (selectedRole == "EventCoordinator"){
-          return (<EventCoordinator></EventCoordinator>);
-        }
-        else{
-          return (<></>)
-        }
-        }
 
         function admin(){
           if (selectedRole == "Admin"){
@@ -80,12 +76,14 @@ export default function App() {
                     </RadioGroup>
                 </Stack>
             </HStack>
-            <br/>
-            <Events title="What's New!" table={test}/>
-            <Events title="Upcoming Events" table={test2}/>    
-                    <div>
-                        {/* <VolunteerForm></VolunteerForm> */}
-                         {selectedRole==="Volunteer"?<VolunteerForm></VolunteerForm> : <></>}  
+            
+            {/* <Events title="Upcoming Events" table={test2}/> */}
+                    <div>         
+                        {selectedRole==="Event Coordinator"?<Events title="What's New!" table={test}/> : <></>}
+                        {selectedRole==="Event Coordinator"?<EventForm></EventForm> : <></>}  
+               
+                        {selectedRole==="Volunteer"?<Events title="Upcoming Events" table={test2}/> : <></>} 
+                        {selectedRole==="Volunteer"?<VolunteerForm></VolunteerForm> : <></>}
                         {/* {event_coordinator()}
                         {admin()} */}
                     </div>
