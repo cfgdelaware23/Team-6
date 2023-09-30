@@ -1,8 +1,8 @@
 "use client"
 import React, { useState } from 'react';
-import Select from 'react-select';
+import { Select } from "@chakra-ui/react";
 
-const Form = () => {
+const VolunteerForm = () => {
     const [first_name, setFirstName] = useState('');
     const [last_name, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -19,9 +19,13 @@ const Form = () => {
     };
 
     const eventOptions = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
+        { value: '1', label: 'ACB Presents the Daily Schedule' },
+        { value: '2', label: 'The Breakfast Bunch' },
+        { value: '3', label: 'Sunday Edition' },
+        { value: '4', label: 'Ask the Pastor' },
+        { value: '5', label: 'Quilting Guild' },
+        { value: '6', label: 'Reading the 18th Century' },
+        { value: '7', label: 'ST. Lucy\'s Guidey' },
     ]
 
     return (
@@ -93,4 +97,4 @@ const Form = () => {
       );
     };
     
-    export default Form;
+    export default VolunteerForm;
