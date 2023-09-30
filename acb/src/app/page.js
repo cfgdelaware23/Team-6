@@ -43,8 +43,8 @@ export default function App() {
     //   }
 
       function event_coordinator(){
-        if (selectedRole == "EventCoordinator"){
-          return (<eventOrganizerForm></eventOrganizerForm>);
+        if (selectedRole == "Event Coordinator"){
+          return (<EventForm></EventForm>);
         }
         else{
           return (<></>)
@@ -90,13 +90,10 @@ export default function App() {
                         {/* <VolunteerForm></VolunteerForm> */}
                         
                         {selectedRole==="Event Coordinator"?<Events title="What's New!" table={test}/> : <></>}
-                        {selectedRole==="Event Coordinator"?<EventOrganizerForm></EventOrganizerForm> : <></>}  
+                        {selectedRole==="Event Coordinator"?<EventForm></EventForm> : <></>}  
                
                         {selectedRole==="Volunteer"?<Events title="Upcoming Events" table={test2}/> : <></>} 
                         {selectedRole==="Volunteer"?<VolunteerForm></VolunteerForm> : <></>}
-
-                         {/* {selectedRole==="Volunteer"?<VolunteerForm></VolunteerForm> : <></>}
-                         {selectedRole==="EventCoordinator"?<EventOrganizerForm></EventOrganizerForm> : <></>}   */}
                         {/* {event_coordinator()}
                         {admin()} */}
                     </div>
