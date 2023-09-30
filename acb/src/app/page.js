@@ -14,20 +14,37 @@ import EventForm from "../../components/EventForm";
 import { Heading, Radio, RadioGroup, Stack, HStack, Img } from "@chakra-ui/react";
 import { EventCoordinator } from './EventCoordinator';
 import { ViewIcon } from "@chakra-ui/icons";
+// import { UserList } from '../db/UserList.js';
 
 
 export default function App() {
   const [selectedRole, setRole] = useState(localStorage.getItem("role") || "Volunteer");
   const [users, setUsers] = useState(["Volunteer", "Event Coordinator", "Admin"]);
 
-  const test = [["Sunday September 17, 2023", "ACB Presents The Daily Schedule"], 
-                ["Tuesday September 19, 2023", "The Breakfast Bunch"], 
-                ["Wednesday September 20, 2023", "Spiritual Sanctuary"]]
-  const test2 = [["ACB Presents The Daily Schedule", "Join your Community Morning Crew for the question of the day; reading of the daily schedule; and sharing time."], 
-                  ["The Breakfast Bunch", "Join Tom and the gang for an hour of free-flowing conversation."], 
-                  ["Spiritual Sanctuary", "Come one, come all to a place where we can relax and discuss all things spiritual with an open mind and acceptance. All faiths are welcome"], 
-                  ["Sunday Edition", "This Sunday Anthony and the Sunday Edition Crew welcomes Everette Bacon the new Vice President of Blindness Initiatives, AIRA. Everette who is a prominent Board member of the National Federation of the Blind and passionate Advocator will share his journey with us and give us a look into the realm of advocating for Visual Interpretation."], 
-                  ["Ask the Pastor", "Ask Pastor Bill your questions about the Bible or the Christian life. A teaching will be followed by your questions. Prayer requests can then be shared if desired. This event is open to anyone regardless of their denomination."]]
+  const test = [["Sunday September 17, 2023", "ACB Presents The Daily Schedule"],
+  ["Tuesday September 19, 2023", "The Breakfast Bunch"],
+  ["Wednesday September 20, 2023", "Spiritual Sanctuary"]]
+  const test2 = [["ACB Presents The Daily Schedule", "Join your Community Morning Crew for the question of the day; reading of the daily schedule; and sharing time."],
+  ["The Breakfast Bunch", "Join Tom and the gang for an hour of free-flowing conversation."],
+  ["Spiritual Sanctuary", "Come one, come all to a place where we can relax and discuss all things spiritual with an open mind and acceptance. All faiths are welcome"],
+  ["Sunday Edition", "This Sunday Anthony and the Sunday Edition Crew welcomes Everette Bacon the new Vice President of Blindness Initiatives, AIRA. Everette who is a prominent Board member of the National Federation of the Blind and passionate Advocator will share his journey with us and give us a look into the realm of advocating for Visual Interpretation."],
+  ["Ask the Pastor", "Ask Pastor Bill your questions about the Bible or the Christian life. A teaching will be followed by your questions. Prayer requests can then be shared if desired. This event is open to anyone regardless of their denomination."]]
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const [formData, setFormData] = useState({
+    first_name: '',
+    last_name: '',
+    email_address: '',
+    company: '',
+    date: '',
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // add form logic here - send data to the server
+    setIsSubmitted(true);
+  };
 
   // fetchAvailabilities();
 
@@ -95,26 +112,43 @@ export default function App() {
         </Stack>
       </HStack>
       <br />
+
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="first_name"
+          placeholder="First Name"
+          value={formData.first_name}
+        // onChange={handleInputChange}
+        />
+        {/* optional - form fields */}
+        <button type="submit">Submit</button>
+      </form>
+      {isSubmitted && (
+        <p>Thank you, {formData.firstName}!</p>
+      )}
+
+
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
 
         {/* <VolunteerForm></VolunteerForm> */}
 
         {selectedRole === "Event Coordinator" ? <Events title="What's New!" table={test} /> : <></>}
-        {selectedRole === "Event Coordinator" ? <Link href="/eventOrganizer"><button style={{ backgroundColor: '#36287C', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' ,  padding: '12px 24px'}}>Add New Event</button></Link> : <></>}
+        {selectedRole === "Event Coordinator" ? <Link href="/eventOrganizer"><button style={{ backgroundColor: '#36287C', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', padding: '12px 24px' }}>Add New Event</button></Link> : <></>}
         {/* {selectedRole === "Event Coordinator" ? <EventForm></EventForm> : <></>} */}
 
         {selectedRole === "Volunteer" ? <Events title="Upcoming Events" table={test2} /> : <></>}
-        {selectedRole === "Volunteer" ? <Link href="/volunteer_form"><button style={{ backgroundColor: '#36287C', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' ,  padding: '12px 24px' }}>Add New Hours</button></Link> : <></>}
+        {selectedRole === "Volunteer" ? <Link href="/volunteer_form"><button style={{ backgroundColor: '#36287C', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', padding: '12px 24px' }}>Add New Hours</button></Link> : <></>}
         {/* {event_coordinator()}
                         {admin()} */}
         {selectedRole === "Admin" ? <Admin /> : <></>}
-        
-                      
+
+
       </div>
-      <div>
-      </div>
+
     </div>
 
   );
 }
 
+// export default App;
