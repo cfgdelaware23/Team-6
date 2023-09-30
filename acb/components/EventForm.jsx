@@ -66,7 +66,7 @@ const EventForm = () => {
                 type="company"
                 id="company"
                 name="company"
-                value={email}
+                value={events}
                 onChange={(e) => setCompany(e.target.value)}
               />
             </div>
