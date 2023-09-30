@@ -20,6 +20,34 @@ export default function App() {
             return(<></>);
         }
     }
+
+    function volunteer(){
+      if (selectedRole == "Volunteer"){
+        return (<Volunteer></Volunteer>);
+      }
+      else{
+        return (<></>)
+      }
+      }
+
+      function event_coordinator(){
+        if (selectedRole == "Volunteer"){
+          return (<EventCoordinator></EventCoordinator>);
+        }
+        else{
+          return (<></>)
+        }
+        }
+
+        function admin(){
+          if (selectedRole == "Volunteer"){
+            return (<Admin></Admin>);
+          }
+          else{
+            return (<></>)
+          }
+          }
+    }
   return (
     <div className = "App">
       <HStack p={6} bg="blue.100"justify="space-between">
