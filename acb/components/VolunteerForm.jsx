@@ -1,8 +1,8 @@
 "use client"
 import React, { useState } from 'react';
-import Select from 'react-select';
+import { Select } from "@chakra-ui/react";
 
-const Form = () => {
+const VolunteerForm = () => {
     const [first_name, setFirstName] = useState('');
     const [last_name, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -93,4 +93,4 @@ const Form = () => {
       );
     };
     
-    export default Form;
+    export default VolunteerForm;

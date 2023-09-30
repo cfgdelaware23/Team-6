@@ -4,37 +4,31 @@ import styles from './page.module.css'
 
 import { useState } from "react";
 import { Users } from './Users';
-import { Volunteer } from './Volunteer';
 import { Admin } from './Admin';
+import VolunteerForm  from "../../components/VolunteerForm";
 import { EventCoordinator } from './EventCoordinator';
 
-import { Heading, Radio, RadioGroup, Stack, HStack, Img} from "@chakra-ui/react";
+import { Heading, Radio, RadioGroup, Stack, HStack, Img, Flex, Box} from "@chakra-ui/react";
 import { ViewIcon } from "@chakra-ui/icons";
 
 
 export default function App() {
-  const [selectedRole, setRole] = useState(localStorage.getItem("role") || "User");
+  const [selectedRole, setRole] = useState(localStorage.getItem("role") || "Volunteer");
   const [users, setUsers] = useState(["Volunteer", "Event Coordinator", "Admin"]);
 
-    function selectUser(){
-        if (selectedRole == "User"){
-            return (<Users></Users>);
-        } else{
-            return(<></>);
-        }
-    }
 
-    function volunteer(){
-      if (selectedRole == "Volunteer"){
-        return (<Volunteer></Volunteer>);
-      }
-      else{
-        return (<></>)
-      }
-      }
+
+    // function volunteer(){
+    //   if (selectedRole == "Volunteer"){
+    //     return (<VolunteerForm></VolunteerForm>);
+    //   }
+    //   else{
+    //     return (<></>)
+    //   }
+    //   }
 
       function event_coordinator(){
-        if (selectedRole == "Volunteer"){
+        if (selectedRole == "EventCoordinator"){
           return (<EventCoordinator></EventCoordinator>);
         }
         else{
@@ -43,16 +37,18 @@ export default function App() {
         }
 
         function admin(){
-          if (selectedRole == "Volunteer"){
+          if (selectedRole == "Admin"){
             return (<Admin></Admin>);
           }
           else{
             return (<></>)
           }
           }
+  console.log(selectedRole)
+
   return (
     <div className = "App">
-      <HStack p={6} bg="blue.100"justify="space-between">
+      <HStack p={6} bg="#362B7C"justify="space-between">
                 <HStack>
                     <Img src="./logo.jpeg" alt="ACB Logo" height="100px"/>
                     <Heading size="xl" pl={2} color="#FFFFFF">American Council of the Blind </Heading>
@@ -75,6 +71,17 @@ export default function App() {
                 </Stack>
             </HStack>
             <br/>
+                    <div>
+                        {/* <VolunteerForm></VolunteerForm> */}
+                        
+                         {selectedRole==="Volunteer"?<VolunteerForm></VolunteerForm> : <></>}  
+                        {/* {event_coordinator()}
+                        {admin()} */}
+                    </div>
+                    <div>
+                        {/* {selectUser()} */}
+                    </div>
+      
       </div>
 
   );
