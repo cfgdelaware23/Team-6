@@ -6,9 +6,15 @@ import { useState } from "react";
 import { Users } from './Users';
 import { Admin } from './Admin';
 import VolunteerForm  from "../../components/VolunteerForm";
+<<<<<<< HEAD
 import EventForm  from "../../components/EventForm";
 
 import { Heading, Radio, RadioGroup, Stack, HStack, Img} from "@chakra-ui/react";
+=======
+import { EventCoordinator } from './EventCoordinator';
+import { Heading, Radio, RadioGroup, Stack, HStack, Img, Flex, Box} from "@chakra-ui/react";
+import { Heading, Radio, RadioGroup, Stack, HStack, Img } from "@chakra-ui/react";
+>>>>>>> cc5d3b82f955283cc1a68c43db3fde242397b31c
 import { ViewIcon } from "@chakra-ui/icons";
 
 
