@@ -94,11 +94,11 @@ export default function App() {
         {/* <VolunteerForm></VolunteerForm> */}
 
         {selectedRole === "Event Coordinator" ? <Events title="What's New!" table={test} /> : <></>}
-        {selectedRole === "Event Coordinator" ? <Link href="/eventOrganizer"><button style={{ backgroundColor: '#36287C', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer' ,  padding: '12px 24px'}}>Add New Event</button></Link> : <></>}
+        {selectedRole === "Event Coordinator" ? <Link href="/eventOrganizer"><button style={{ backgroundColor: '#36287C', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' ,  padding: '12px 24px'}}>Add New Event</button></Link> : <></>}
         {/* {selectedRole === "Event Coordinator" ? <EventForm></EventForm> : <></>} */}
 
         {selectedRole === "Volunteer" ? <Events title="Upcoming Events" table={test2} /> : <></>}
-        {selectedRole === "Volunteer" ? <Link href="/volunteer_form"><button style={{ backgroundColor: '#36287C', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer' }}>Add New Hours</button></Link> : <></>}
+        {selectedRole === "Volunteer" ? <Link href="/volunteer_form"><button style={{ backgroundColor: '#36287C', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' ,  padding: '12px 24px' }}>Add New Hours</button></Link> : <></>}
         {/* {event_coordinator()}
                         {admin()} */}
       </div>
