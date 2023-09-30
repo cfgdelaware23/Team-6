@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+
 import eventOrganizerForm from "components/eventOrganizerForm";
 
 
@@ -9,3 +10,4 @@ export function ShowEventCoordinatorForm(){
         </div>
         )
 }
+

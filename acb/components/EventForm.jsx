@@ -2,6 +2,12 @@
 import React, { useState } from 'react';
 import { DatePicker } from "@chakra-ui/react";
 
+export var firstName;
+export var lastName;
+export var emailAddress;
+export var company;
+export var dateData;
+
 const EventForm = () => {
     const [first_name, setFirstName] = useState('');
     const [last_name, setLastName] = useState('');
@@ -13,10 +19,17 @@ const EventForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // logic
-        console.log(first_name);
-        console.log(last_name);
-        console.log(email);
-        console.log(events);
+        firstName = first_name;
+        lastName = last_name;
+        emailAddress = email;
+        company = events;  
+        dateData = date;
+                
+        console.log(firstName);
+        console.log(lastName);
+        console.log(emailAddress);
+        console.log(company);
+        console.log(dateData);
         console.log('Form submitted');
     };
 
@@ -67,7 +80,7 @@ const EventForm = () => {
                 type="company"
                 id="company"
                 name="company"
-                value={email}
+                value={events}
                 onChange={(e) => setCompany(e.target.value)}
               />
             </div>
@@ -101,7 +114,7 @@ const EventForm = () => {
                   borderRadius: '4px',
                   border: 'none',
                   cursor: 'pointer',
-                  onclick: { set_new_user }
+                  // onclick: { set_new_user }
                 }}
               >
                 Submit
@@ -113,3 +126,4 @@ const EventForm = () => {
     };
     
     export default EventForm;
+    
