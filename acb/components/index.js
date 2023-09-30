@@ -11,5 +11,5 @@ export {
     eventOrganizerForm,
     Events,
     Form,
-    VolunteerForm
+    VolunteerForm,
 }
