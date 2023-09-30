@@ -42,7 +42,7 @@ const Admin = () => {
 
     const csvData = [
     ["ID", "First Name", "Last Name", "Email", "Gender", "IP Address"],
-    ...data.map(( { id, first_name, last_name, email, gender, ip_address}) => [
+    ...data.map(( { id, first_name, last_name, email, gender, ip_address }) => [
             id,
             first_name,
             last_name,
@@ -84,7 +84,7 @@ const Admin = () => {
                 </tbody>
                 </table>
             </div>
-            <div className="btn-container">
+            <div className="btn-container" style={{ marginTop: '100px', textAlign: 'center' }}>
                 <Button className="download-btn">
                 <CSVLink className="csv-download" filename="volunteer_data" data={csvData}>Download Me</CSVLink>
                 </Button>
