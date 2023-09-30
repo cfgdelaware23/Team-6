@@ -26,7 +26,7 @@ function Events(props) {
                         <Card key={index} className='individual-item'>
                             <CardBody>
                                 
-                                <Text>{x}</Text>
+                                <Text className='item-title'>{x}</Text>
                                 <Text>This is an example description of the event</Text>
                                 
                             </CardBody>
