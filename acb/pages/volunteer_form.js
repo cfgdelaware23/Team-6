@@ -1,7 +1,9 @@
-import VolunteerForm from "../components/VolunteerForm"
+import { VolunteerForm } from "../components/VolunteerForm";
 
-export default function Form () {
+const volunteerForm = () => {
     return (
         <VolunteerForm />
     )
 }
+
+export default volunteerForm;

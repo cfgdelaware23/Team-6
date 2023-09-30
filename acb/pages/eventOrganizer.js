@@ -1,8 +1,9 @@
-import EventOrganizerForm from "../components/EventOrganizerForm";
+import { EventOrganizerForm } from "../components/EventOrganizerForm";
 
-
-export default function Form() {
+const eventOrganizerForm = () => {
     return (
         <EventOrganizerForm/>
     )
 }
+
+export default eventOrganizerForm;
