@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { CSVLink, CSVDownload } from "react-csv";
-
 import { useTable } from 'react-table';
 
 import mock_data from './MOCK_DATA.json';
@@ -10,20 +9,6 @@ import '../styles/style.css';
 
 
 const DownloadButton = () => {
-
-  console.log(mock_data);
-
-  const csvData = [
-    ["firstname", "lastname", "email"],
-    ["Ahmed", "Tomi", "ah@smthing.co.com"],
-    ["Raed", "Labes", "rl@smthing.co.com"],
-    ["Yezzi", "Min l3b", "ymin@cocococo.com"]
-  ];
-  
-  
-    // <Button>
-    //   <CSVLink className="csv_download" data={csvData}>Download me</CSVLink>
-    // </Button>
 
   const data = React.useMemo(() => mock_data, []);
   const columns = React.useMemo(
@@ -56,14 +41,27 @@ const DownloadButton = () => {
     []
   );
 
+  const csvData = [
+    ["ID", "First Name", "Last Name", "Email", "Gender", "IP Address"],
+    ...data.map(( { id, first_name, last_name, email, gender, ip_address}) => [
+      id,
+      first_name,
+      last_name,
+      email,
+      gender,
+      ip_address
+    ])
+  ]
+
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data });
 
   return (
-    <div className="App">
+    <>
+    <div className="app">
       <div className="container">
         <table {...getTableProps()}>
-          <thead>
+          <thead className="header-table">
             {headerGroups.map((headerGroup) => (
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
@@ -89,6 +87,11 @@ const DownloadButton = () => {
         </table>
       </div>
     </div>
+
+    <Button>
+      <CSVLink className="csv_download" filename="volunteer_data" data={csvData}>Download me</CSVLink>
+    </Button>
+    </>
   );
 }
 
