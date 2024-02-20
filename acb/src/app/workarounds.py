@@ -5,7 +5,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 sender_email = "sample@gmail.com"
-sender_password = 
+sender_password = ""
 recipient_email = "testl@example.com"
 subject = "Scheduled Email"
 message_body = "This is a scheduled email."
